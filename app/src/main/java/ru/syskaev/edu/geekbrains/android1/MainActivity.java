@@ -3,7 +3,6 @@ package ru.syskaev.edu.geekbrains.android1;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.widget.TextView;
 
@@ -15,10 +14,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(R.string.weather_app);
-        TextView helloField = findViewById(R.id.hello_world);
+        TextView helloField = findViewById(R.id.hello_world_view);
         helloField.setText(getHelloText());
     }
 
@@ -36,11 +32,6 @@ public class MainActivity extends AppCompatActivity {
         else
             helloType = resources.getString(R.string.afternoon_hello);
         return helloType + ", " + hello_target + "!";
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return false;
     }
 
 }
